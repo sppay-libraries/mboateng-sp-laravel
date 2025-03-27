@@ -1,7 +1,7 @@
 ### Installation
 > Require this package in your composer.json and update composer
 
-1. **composer require sspay/sspay-laravel**  
+1. **composer require sppay/sspay-laravel**  
    Run the following command to install the package in your project:
    ```sh
    composer require sppay/sspay-laravel
