@@ -1,4 +1,4 @@
-@extends('layouts')
+@extends('sppay::layouts')
 @section('contents')
     <div class="flex items-top min-h-screen justify-center items-center">
         <table class="table table-stripped table-responsive">

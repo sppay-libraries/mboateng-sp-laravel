@@ -1,10 +1,10 @@
-@extends('layouts')
+@extends('sppay::layouts')
 @section('contents')
     <div class="container">
         <div class="col-md-8">
             <form method="POST" action="{{$action}}">
                 @csrf
-                @include('errors')
+                @include('sppay::errors')
                 <div class="row">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Enter Amount</label>
