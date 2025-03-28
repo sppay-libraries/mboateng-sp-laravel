@@ -10,16 +10,16 @@ abstract class Controller
 {
     public function __construct(protected Client $client, protected ?string $accessToken = null)
     {
-        $url = config('services.sspay.base_url') . '/oauth/token';
+        $url = config('sppay.base_url') . '/oauth/token';
 
-        $this->accessToken = Cache::remember('sspay_access_token', 1800, function () use ($url) {
+        $this->accessToken = Cache::remember('sppay_access_token', 1800, function () use ($url) {
             $response = $this->client->request('POST', $url, [
                 'json' => [
-                    "grant_type" => config('services.sspay.grant_type'),
-                    "client_id" => config('services.sspay.client_id'),
-                    "client_secret" => config('services.sspay.client_secret'),
-                    "username" => config('services.sspay.username'),
-                    "password" => config('services.sspay.password'),
+                    "grant_type" => config('sppay.grant_type'),
+                    "client_id" => config('sppay.client_id'),
+                    "client_secret" => config('sppay.client_secret'),
+                    "username" => config('sppay.username'),
+                    "password" => config('sppay.password'),
                 ]
             ]);
 
@@ -30,7 +30,7 @@ abstract class Controller
 
     public function fetchData($endpoint): ResponseInterface
     {
-        $url = config('services.sspay.base_url') . $endpoint;
+        $url = config('sppay.base_url') . $endpoint;
         return $this->client->request('GET', $url, [
             'headers' => [
                 'Authorization' => 'Bearer '.$this->accessToken,
@@ -40,7 +40,7 @@ abstract class Controller
 
     public function sendRequest($endpoint, $body): ResponseInterface
     {
-        $url = config('services.sspay.base_url') . $endpoint;
+        $url = config('sppay.base_url') . $endpoint;
         return $this->client->request('POST', $url, [
             'json' => $body,
             'headers' => [

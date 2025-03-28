@@ -16,7 +16,10 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {},
+    "require": {
+        "guzzlehttp/guzzle": "^7.9",
+        "illuminate/cache": "^12.3"
+    },
     "extra": {
         "laravel": {
             "providers": [
