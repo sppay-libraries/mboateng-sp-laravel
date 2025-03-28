@@ -19,10 +19,16 @@
    php artisan vendor:publish --tag=sppay-views
    ```
 
-4. **Add Environment Variables**  
+4. **Publish Migrations**  
    Copy the migration files into your migrations dir:
    ```sh
    php artisan vendor:publish --tag=sppay-migrations 
+   ```
+   
+5. **Run Migrations**  
+   Migrate the package's migrations files you just copied
+   ```sh
+   php artisan migrate 
    ```
    
 Update the .env file with the appropriate values for your setup.
